@@ -33,5 +33,54 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+}
 
+.card-wrapper::before{
+    content: '';
+    position: absolute;
+    height:  100px;
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 15px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0px;
+    transition: 0.3s;
+}
+
+.card-wrapper p {
+    font-size: 14px;
+    visibility:hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform:uppercase;
+    transition: 0.3s;
+}
+
+.card:hover{
+    filter: unset;
+    
+}
+
+.card:hover > .card-wrapper::before{
+    height: 400px;
+    width: 300px;
+    opacity: 1;
+}
+
+.card:hover > .card-wrapper p {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
 }
